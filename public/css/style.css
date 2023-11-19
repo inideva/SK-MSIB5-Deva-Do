@@ -1,0 +1,62 @@
+::-webkit-scrollbar {
+  display: none;
+}
+.body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+}
+.warna1 {
+  background-color: #efefef;
+}
+.banner {
+  height: 60vh;
+  background: linear-gradient(
+      rgba(223, 211, 211, 0.4),
+      rgba(223, 211, 211, 0.4)
+    ),
+    url("../img/assets/bg1.jpg");
+}
+.highlighted-image {
+  height: 250px;
+}
+
+.image-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../img/assets/image1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.image-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../img/assets/image2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.image-3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../img/assets/about1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.no-decoration {
+  text-decoration: none;
+  color: white;
+}
+.no-decoration:hover {
+  color: rgba(223, 211, 211, 0.4);
+}
+.text-harga {
+  font-size: 20px;
+  color: #6c6266;
+}
+.image-box {
+  height: 250px;
+}
+.image-box img {
+  height: 100%;;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
