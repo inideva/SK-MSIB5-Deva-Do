@@ -29,7 +29,7 @@ $queryProduk = mysqli_query($conn, "SELECT id, nama, gambar, harga, detail FROM 
                 <div class="col-md-3 mb-5">
                     <div class="card h-100">
                         <div class="image-box">
-                        <img src="img/uploads/<?php echo $produk['gambar'] ?>" class="card-img-top" alt="...">
+                        <img src="img/uploads/<?php echo $data['gambar'] ?>" class="card-img-top" alt="<?php echo $data['nama']?>">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><b><?php echo $data['nama'] ?></b></h5>

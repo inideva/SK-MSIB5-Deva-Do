@@ -7,7 +7,7 @@ $queryProduk = mysqli_query($conn, "SELECT id, nama, gambar, harga, detail FROM 
 <html lang="en">
 
 <head>
-     <!-- Head -->
+    <!-- Head -->
     <?php include "template/head.php" ?>
 </head>
 
@@ -75,20 +75,20 @@ $queryProduk = mysqli_query($conn, "SELECT id, nama, gambar, harga, detail FROM 
 
             <!-- Card Product -->
             <div class="row mt-5">
-                <?php while($data = mysqli_fetch_array($queryProduk)){ ?>
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                        <div class="image-box">
-                        <img src="img/uploads/ <?php echo $data['gambar'] ?>" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $data['nama'] ?></h5>
-                            <p class="card-text text-truncate"><?php echo $data['detail'] ?></p>
-                            <p class="card-text text-harga"><?php echo "IDR " . number_format($data['harga'], 0, ',', '.') ?></p>
-                            <a href="detail-produk.php.?nama=<?php echo $data['nama']?>" class="btn btn-primary">Lihat Detail</a>
+                <?php while ($data = mysqli_fetch_array($queryProduk)) { ?>
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100">
+                            <div class="image-box">
+                                <img src="img/uploads/<?php echo $data['gambar'] ?>" class="card-img-top" alt="<?php echo $data['nama']?>">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $data['nama'] ?></h5>
+                                <p class="card-text text-truncate"><?php echo $data['detail'] ?></p>
+                                <p class="card-text text-harga"><?php echo "IDR " . number_format($data['harga'], 0, ',', '.') ?></p>
+                                <a href="detail-produk.php.?nama=<?php echo $data['nama'] ?>" class="btn btn-primary">Lihat Detail</a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php } ?>
             </div>
             <a class="btn btn-warning fs-5 mt-5" href="produk.php">Lihat Lainnya</a>

@@ -19,7 +19,7 @@ $produk = mysqli_fetch_array($queryProduk);
         <div class="container">
             <div class="row">
                 <div class="col-md-5 mb-5">
-                    <img src="img/uploads/<?php echo $produk['gambar']?>" alt="" class="w-100">
+                    <img src="img/uploads/<?php echo $produk['gambar']?>" alt="<?php echo $produk['nama']?>" class="w-100">
                 </div>
                 <div class="col-md-7">
                     <h1><?php echo $produk['nama'] ?></h1>
