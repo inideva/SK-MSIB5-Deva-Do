@@ -1,4 +1,3 @@
-<?php include "../koneksi/koneksi.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,21 +15,28 @@
                 EDIT PRODUK
             </div>
             <?php
-            $id = $_GET["nama"];
-            $query = mysqli_query($conn,"SELECT * FROM produk  WHERE id ='$id'");
-
+            include "../koneksi/koneksi.php";
+            // print_r($_GET);
+            $id = $_GET['id'];
+            $query = mysqli_query($conn, "SELECT * FROM produk WHERE id='$id'");
             while ($produk = mysqli_fetch_array($query)) {
                 $nama = $produk["nama"];
                 $gambar = $produk["gambar"];
                 $detail = $produk["detail"];
                 $harga = $produk["harga"];
-                $kategori = $produk["nama_kategori"];
-                $warna = $produk["warna_product"];
+                $kategori = $produk["kategori_id"];
+                // $warna = $produk["warna_produk"];
                 $stok = $produk["stok"];
+            }
+            $queryWarna = mysqli_query($conn, "SELECT * FROM warna WHERE id='$id'");
+            $relustWarna = array();
+            while ($warnaproduk = mysqli_fetch_array($queryWarna)) {
+                $warna = $produk["warna_produk"];
+                $relustWarna[] = $warna;
             }
             ?>
             <div class="card-body">
-                <form action="proses_tambah.php" id="form-tambah" method="post" enctype="multipart/form-data">
+                <form action="proses_edit.php?=<?php echo $id ?>" id="form-edit" method="post" enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label class="form-label" for="nama">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama ?>" placeholder="Masukan Nama" required>

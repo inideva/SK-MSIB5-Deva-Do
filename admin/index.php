@@ -40,7 +40,7 @@
                                 <tbody>
                                     <?php
                                     include "../koneksi/koneksi.php";
-                                    $query = mysqli_query($conn, "SELECT p.nama, p.gambar, p.harga, p.detail, k.nama_kategori, w.warna_produk, p.stok FROM produk as p join tipe_produk as tp on tp.produk_id=p.id join kategori as k on k.id=p.kategori_id join warna as w on w.id=tp.warna_id ORDER BY p.id ASC;");
+                                    $query = mysqli_query($conn, "SELECT p.id, p.nama, p.gambar, p.harga, p.detail, k.nama_kategori, w.warna_produk, p.stok FROM produk as p join tipe_produk as tp on tp.produk_id=p.id join kategori as k on k.id=p.kategori_id join warna as w on w.id=tp.warna_id ORDER BY p.id ASC;");
                                     $no = 0;
                                     while ($produk = mysqli_fetch_array($query)) {
                                         $no++;
@@ -56,8 +56,8 @@
                                             <td><?php echo $produk['warna_produk'] ?></td>
                                             <td><?php echo $produk['stok'] ?></td>
                                             <td>
-                                                <a href="edit.php" class="btn btn-warning btn-sm mb-1">Ubah</a>
-                                                <a href="proses_hapus.php" class="btn btn-danger btn-sm">Hapus</a>
+                                                <a href="edit.php?id=<?php echo $produk['id'] ?>" class="btn btn-warning btn-sm mb-1">Ubah</a>
+                                                <a href="proses_hapus.php?id=<?php echo $produk['id']?>" class="btn btn-danger btn-sm">Hapus</a>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -65,7 +65,7 @@
                             </table>
                         </form>
                     </div>
-                </div>
+                </div>  
             </div>
         </div>
     </div>
